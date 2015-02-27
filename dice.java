@@ -5,7 +5,6 @@ private String color;
 	private String br = "Brain";
 	private String sh = "Shot";
 	private String ru = "Runner";
-	private int max = 6;
 	private int rolle;
 	private ArrayList<String> green;
 	for (int t=1; t<4; t++) {
@@ -14,9 +13,9 @@ private String color;
 				character = "Brain";
 			}
 			else if(t==2){
-				character = "Shot";
-			}else {
 				character = "Runner";
+			}else {
+				character = "Shot";
 			}
 			green.add(character);
 		}
@@ -37,16 +36,19 @@ private String color;
 	}
 	private ArrayList<String> yellow;
 	for (int m=1; m<4; m++) {
-		for (int n=0; n<2; n++){
+		for (int n=0; n<2;){
 			if(m==1){
 				character = "Brain";
+				n++;
 			}
 			else if(m==2){
 				character = "Shot";
+				n++;
 			}else {
 				character = "Runner";
+				n++;
 			}
-			red.add(character);
+			yellow.add(character);
 		}
 	}
 	// work around this
@@ -58,10 +60,12 @@ private String color;
 			Collections.shuffle(red);
 			character = red.get(0);
 			if(character=="Brain"){
-				brains++;
+				int y = player.getBrains();
+				player.setBrains(y++);
 			}
 			else if(character == "Shot"){
-				shot++;
+				int o = player.getShot();
+				player.setShot(o++);
 			}
 			else{
 				//Stay in hand to roll again
@@ -71,10 +75,12 @@ private String color;
 			Collections.shuffle(green);
 			character = green.get(0);
 			if(character=="Brain"){
-				brains++;
+				int y = player.getBrains();
+				player.setBrains(y++);
 			}
 			else if(character == "Shot"){
-				shot++;
+				int o = player.getShot();
+				player.setShot(o++);
 			}
 			else{
 				//hold in hand
@@ -84,10 +90,12 @@ private String color;
 			Collections.shuffle(yellow);
 			character = yellow.get(0);
 			if(character=="Brain"){
-				brains++;
+				int y = player.getBrains();
+				player.setBrains(y++);
 			}
 			else if(character == "Shot"){
-				shot++;
+				int o = player.getShot();
+				player.setShot(o++);
 			}
 			else{
 				//hold in hand
@@ -96,5 +104,3 @@ private String color;
 		return character;
 	}
 }
-
-
