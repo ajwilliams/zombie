@@ -55,52 +55,20 @@ private String color;
 	Dice(String c){
 		color = c;
 	}
-	public String roll(){
-		if (color == "red"){
-			Collections.shuffle(red);
-			character = red.get(0);
-			if(character=="Brain"){
-				int y = player.getBrains();
-				player.setBrains(y++);
-			}
-			else if(character == "Shot"){
-				int o = player.getShot();
-				player.setShot(o++);
-			}
-			else{
-				//Stay in hand to roll again
-			}
+	public String roll(ArrayList r){
+		public String roll(ArrayList g){
+		Collections.shuffle(g);
+		String r = g.get(0);
+		if (r=="Brain"){
+			int u = player.getBrains();
+			player.setBrains(u++);
+		} else if (r=="Shot"){
+			int e = player.getShot();
+			player.setShot(e++);
+		} else {
+			// hold in hand
 		}
-		else if (color=="green"){
-			Collections.shuffle(green);
-			character = green.get(0);
-			if(character=="Brain"){
-				int y = player.getBrains();
-				player.setBrains(y++);
-			}
-			else if(character == "Shot"){
-				int o = player.getShot();
-				player.setShot(o++);
-			}
-			else{
-				//hold in hand
-			}
-		}
-		else {
-			Collections.shuffle(yellow);
-			character = yellow.get(0);
-			if(character=="Brain"){
-				int y = player.getBrains();
-				player.setBrains(y++);
-			}
-			else if(character == "Shot"){
-				int o = player.getShot();
-				player.setShot(o++);
-			}
-			else{
-				//hold in hand
-			}
-		}
+		System.out.print("You got " + r);
 		return character;
 	}
 }
