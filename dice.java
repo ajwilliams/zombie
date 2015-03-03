@@ -1,6 +1,5 @@
 import java.util.*;
 public class dice {
-private String color;
 	private String character;
 	
 	private ArrayList<String> green;
@@ -12,6 +11,7 @@ private String color;
 			green.add(character);
 		}
 	}
+	
 	private ArrayList<String> red;
 	for (int e=1; e<4; e++) {
 		for (int n=0; n<3; n++){
@@ -21,6 +21,7 @@ private String color;
 			red.add(character);
 		}
 	}
+	
 	private ArrayList<String> yellow;
 	for (int m=1; m<4; m++) {
 		for (int n=0; n<2;){
@@ -38,12 +39,13 @@ private String color;
 			yellow.add(character);
 		}
 	}
-	// work around this
+	
 	Dice(ArrayList<String> y){
 		if (y==red) {red = y;} 
 		else if (y==green) {green = y;} 
 		else {yellow = y;}	
 	}
+	
 	public String roll(ArrayList g){
 		Collections.shuffle(g);
 		String r = g.get(0);
@@ -59,4 +61,5 @@ private String color;
 		System.out.print("You got " + r);
 		return character;
 	}
+	
 }
