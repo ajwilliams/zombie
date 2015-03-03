@@ -1,7 +1,7 @@
 public class player {
     private String name;
-    private int brains;
-    private int shots;
+    private static int brains;
+    private static int shots;
     player(String n,int b, int s) {
    	 name = n;
    	 brains = b;
@@ -9,9 +9,9 @@ public class player {
     }
     
     String getName() {return name;}
-    void setName(String n) {name= n;}
-    int getBrains() {return brains;}
-    void setBrians(int b) {brains = b;}
-    int getshots() {return shots;}
-    void setshots(int s) {shots = s;}
+    void setName(String n) {name = n;}
+    int static getBrains() {return brains;}
+    void static setBrians(int b) {brains = b;}
+    int static getShots() {return shots;}
+    void static setShots(int s) {shots = s;}
 }
