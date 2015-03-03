@@ -1,36 +1,23 @@
-import java.lang.*;
+import java.util.*;
 public class dice {
 private String color;
 	private String character;
-	private String br = "Brain";
-	private String sh = "Shot";
-	private String ru = "Runner";
-	private int rolle;
+	
 	private ArrayList<String> green;
 	for (int t=1; t<4; t++) {
 		for (int n=0; n<3; n++){
-			if(t==1){
-				character = "Brain";
-			}
-			else if(t==2){
-				character = "Runner";
-			}else {
-				character = "Shot";
-			}
+			if(t==1){character = "Brain";}
+			else if(t==2){character = "Runner";}
+			else {character = "Shot";}
 			green.add(character);
 		}
 	}
 	private ArrayList<String> red;
 	for (int e=1; e<4; e++) {
 		for (int n=0; n<3; n++){
-			if(t==1){
-				character = "Shot";
-			}
-			else if(t==2){
-				character = "Runner";
-			}else {
-				character = "Brain";
-			}
+			if(t==1){character = "Shot";}
+			else if(t==2){character = "Runner";}
+			else {character = "Brain";}
 			red.add(character);
 		}
 	}
@@ -52,11 +39,12 @@ private String color;
 		}
 	}
 	// work around this
-	Dice(String c){
-		color = c;
+	Dice(ArrayList<String> y){
+		if (y==red) {red = y;} 
+		else if (y==green) {green = y;} 
+		else {yellow = y;}	
 	}
-	public String roll(ArrayList r){
-		public String roll(ArrayList g){
+	public String roll(ArrayList g){
 		Collections.shuffle(g);
 		String r = g.get(0);
 		if (r=="Brain"){
